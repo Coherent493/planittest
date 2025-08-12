@@ -1,40 +1,47 @@
 {
   "jobs": [
     {
-      "slug": "desarrollador-ios-ssr",
-      "title": "Desarrollador iOS Ssr.",
-      "subtitle": "Swift 5 · UIKit · SwiftUI",
+      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20iOS%20Ssr",
       "subtitleDescription": "1 día on-site en Vicente López (Bs. As.)",
-      "description": "<p>Trabajarás en apps nativas del multimedio, colaborando con el equipo iOS. Experiencia en UIKit y SwiftUI. Participación en nuevas features y migraciones a SwiftUI.</p>",
-      "status": "active",
+      "employmentType": "FULL_TIME",
+      "slug": "desarrollador-ios-ssr",
       "postedAt": "2025-08-10",
-      "employmentType": "FULL_TIME",
-      "location": "Vicente López, Buenos Aires, AR",
-      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20iOS%20Ssr"
-    },
-    {
-      "slug": "desarrollador-fullstack-angular-java-ssr",
-      "title": "Desarrollador Fullstack Angular + Java Ssr.",
-      "subtitle": "Java 8 · Angular 16+ · Kafka",
-      "subtitleDescription": "100% remoto (preferente CABA/GBA)",
-      "description": "<p>Te sumarás a un equipo bancario con foco en frontend (Angular). Conocimientos en Java 8, microservicios y mensajería (Kafka).</p>",
       "status": "active",
-      "postedAt": "2025-08-09",
-      "employmentType": "FULL_TIME",
-      "location": "Remoto — Argentina",
-      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20Fullstack%20Ssr"
+      "location": "Vicente López, Buenos Aires, AR",
+      "subtitle": "Swift 5 · UIKit · SwiftUI",
+      "title": "Desarrollador iOS Ssr.",
+      "description": "<p>Trabajarás en apps nativas del multimedio, colaborando con el equipo iOS. Experiencia en UIKit y SwiftUI. Participación en nuevas features y migraciones a SwiftUI.</p>"
     },
     {
-      "slug": "administrador-linux-windows",
-      "title": "Administrador Linux y Windows",
-      "subtitle": "Infraestructura · Scripting · Virtualización",
-      "subtitleDescription": "Soporte a entornos mixtos",
-      "description": "<p>Operación y mantenimiento de servidores Linux/Windows, automatización básica y monitoreo.</p>",
-      "status": "closed",
-      "postedAt": "2025-07-28",
+      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20Fullstack%20Ssr",
+      "subtitleDescription": "100% remoto (preferente CABA/GBA)",
       "employmentType": "FULL_TIME",
+      "slug": "desarrollador-fullstack-angular-java-ssr",
+      "postedAt": "2025-08-09",
+      "status": "active",
+      "location": "Remoto — Argentina",
+      "subtitle": "Java 8 · Angular 16+ · Kafka",
+      "title": "Desarrollador Fullstack Angular + Java Ssr.",
+      "description": "<p>Te sumarás a un equipo bancario con foco en frontend (Angular). Conocimientos en Java 8, microservicios y mensajería (Kafka).</p>"
+    },
+    {
+      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20Admin%20Linux/Windows",
+      "subtitleDescription": "Soporte a entornos mixtos",
+      "employmentType": "FULL_TIME",
+      "slug": "administrador-linux-windows",
+      "postedAt": "2025-07-28",
+      "status": "closed",
       "location": "CABA, Argentina",
-      "applyUrl": "mailto:talent@plan-it.com.ar?subject=Postulación%20Admin%20Linux/Windows"
+      "subtitle": "Infraestructura · Scripting · Virtualización",
+      "title": "Administrador Linux y Windows",
+      "description": "<p>Operación y mantenimiento de servidores Linux/Windows, automatización básica y monitoreo.</p>"
+    },
+    {
+      "status": "active",
+      "title": "Prueba 123",
+      "slug": "prueba123",
+      "description": "\nactive2025-08-10FULL_TIME**Ubicación:** Vicente López, Buenos Aires, ARmailto:talent@plan-it.com.ar?subject=Postulación%20iOS%20Ssr**Título:** Desarrollador Fullstack Angular + Java Ssr.**Slug:** desarrollador-fullstack-angular-java-ssr**Subtítulo:** Java 8 · Angular 16+ · Kafka**Descripción del subtítulo:** 100% remoto (prefer",
+      "postedAt": "2025-08-12"
     }
   ]
 }
