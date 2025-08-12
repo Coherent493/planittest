@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PLAN-IT — Búsquedas activas</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;margin:0;padding:24px;color:#0a0a0a;background:#fff}
+    header,section{max-width:1100px;margin:0 auto}
+    .toolbar{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+    input[type="search"],select{padding:10px 12px;border-radius:12px;border:1px solid #ddd;min-width:220px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .card{border:1px solid #e6e6e6;border-radius:16px;padding:16px}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid #ddd;font-size:12px}
+    a{color:inherit;text-decoration:none}
+    .muted{color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Búsquedas activas</h1>
+    <p class="muted">Filtrá por palabra clave o estado.</p>
+  </header>
+
+  <section>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Buscar por título, subtítulo…" />
+      <select id="status">
+        <option value="active">Solo activas</option>
+        <option value="all">Todas</option>
+      </select>
+    </div>
+    <div id="list" class="grid" aria-live="polite"></div>
+  </section>
+
+  <script type="module" src="/assets/js/jobs.js" defer></script>
+  <script type="module">
+    import { loadJobs, filterJobs, jobCard } from '/assets/js/jobs.js';
+    const $q = document.getElementById('q');
+    const $status = document.getElementById('status');
+    const $list = document.getElementById('list');
+
+    let state = { all: [], active: [] };
+
+    function render(){
+      const showAll = $status.value === 'all';
+      const base = showAll ? state.all : state.active;
+      const filtered = filterJobs(base, $q.value);
+      $list.innerHTML = filtered.map(jobCard).join('') || '<p class="muted">No hay resultados.</p>';
+    }
+
+    loadJobs().then(s => { state = s; render(); });
+    $q.addEventListener('input', render);
+    $status.addEventListener('change', render);
+  </script>
+</body>
+</html>

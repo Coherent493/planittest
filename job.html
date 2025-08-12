@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="title">PLAN-IT — Búsqueda</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;margin:0;padding:24px;color:#0a0a0a;background:#fff}
+    main{max-width:820px;margin:0 auto}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid #ddd;font-size:12px}
+    .muted{color:#666}
+    .lead{font-size:18px}
+    .hr{height:1px;background:#eee;margin:24px 0}
+    a{color:#0a0a0a}
+  </style>
+</head>
+<body>
+  <main id="job"></main>
+
+  <script type="module" src="/assets/js/jobs.js" defer></script>
+  <script type="module">
+    import { loadJobs, getBySlug, jobJsonLd } from '/assets/js/jobs.js';
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('slug');
+
+    loadJobs().then(({ all }) => {
+      const data = getBySlug(all, slug);
+      const $root = document.getElementById('job');
+      if(!data){
+        document.title = 'No encontrado — PLAN-IT';
+        $root.innerHTML = '<h1>404 — Búsqueda no encontrada</h1><p class="muted">Ver <a href="/active.html">búsquedas activas</a>.</p>';
+        return;
+      }
+
+      document.title = data.title + ' — PLAN-IT';
+
+      $root.innerHTML = `
+        <a href="/active.html">← Volver</a>
+        <h1>${data.title}</h1>
+        <p class="lead">${data.subtitle || ''}</p>
+        ${data.subtitleDescription ? `<p class="muted">${data.subtitleDescription}</p>` : ''}
+        <div class="hr"></div>
+        <article>${data.description}</article>
+        <div class="hr"></div>
+        <p>
+          <span class="badge">${data.status === 'active' ? 'Activa' : 'Cerrada'}</span>
+          ${data.employmentType ? ` · <span class="muted">${data.employmentType}</span>` : ''}
+          ${data.location ? ` · <span class="muted">${data.location}</span>` : ''}
+        </p>
+        ${data.applyUrl ? `<p><a href="${data.applyUrl}" target="_blank" rel="nofollow noopener">Postular →</a></p>` : ''}
+      `;
+
+      // JSON-LD JobPosting para SEO
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify(jobJsonLd(data), null, 2);
+      document.head.appendChild(ld);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true # Permite correr en local si usás "npx decap-server"
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "jobs"
+    label: "Búsquedas"
+    files:
+      - file: "data/jobs.json"
+        label: "Listado de búsquedas"
+        name: "jobsfile"
+        description: "Administrá las búsquedas activas y cerradas."
+        fields:
+          - label: "Búsquedas"
+            name: "jobs"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.status}})"
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Slug, name: slug, widget: string, hint: "sin espacios, ej: desarrollador-ios-ssr" }
+              - { label: Subtítulo, name: subtitle, widget: string, required: false }
+              - { label: "Descripción del subtítulo", name: subtitleDescription, widget: string, required: false }
+              - { label: Descripción (HTML o Markdown), name: description, widget: markdown }
+              - { label: Estado, name: status, widget: select, options: ["active", "closed"], default: "active" }
+              - { label: "Fecha de publicación", name: postedAt, widget: datetime, format: "YYYY-MM-DD" }
+              - { label: "Tipo de jornada", name: employmentType, widget: select, options: [FULL_TIME, PART_TIME, CONTRACTOR, INTERN, TEMPORARY], required: false }
+              - { label: Ubicación, name: location, widget: string, required: false }
+              - { label: "URL para postular", name: applyUrl, widget: string, required: false }
+              - { label: "Job Location Type (TELECOMMUTE)", name: jobLocationType, widget: string, required: false }
+              - { label: "Validez (validThrough)", name: validThrough, widget: string, required: false }
