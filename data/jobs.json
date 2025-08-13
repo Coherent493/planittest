@@ -49,6 +49,14 @@
       "slug": "hola12345",
       "description": "hola12345",
       "postedAt": "2025-08-12"
+    },
+    {
+      "status": "active",
+      "title": "prueba piloto",
+      "slug": "prueba piloto",
+      "subtitle": "prueba piloto",
+      "description": "prueba piloto bla bla bla",
+      "postedAt": "2025-08-13"
     }
   ]
 }
