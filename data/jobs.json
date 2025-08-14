@@ -57,6 +57,15 @@
       "subtitle": "prueba piloto",
       "description": "prueba piloto bla bla bla",
       "postedAt": "2025-08-13"
+    },
+    {
+      "status": "active",
+      "title": "Esto es una prueba",
+      "slug": "esto-prueba",
+      "subtitle": "Esto es una prueba",
+      "subtitleDescription": "Esto es una prueba",
+      "description": "Esto es una prueba",
+      "postedAt": "2025-08-14"
     }
   ]
 }
